@@ -1,10 +1,25 @@
+const defaults = require('tailwindcss/defaultTheme');
+
 module.exports = {
- content: require('fast-glob').sync([
+
+  content: require('fast-glob').sync([
     'source/**/*.{blade.php,blade.md,md,html,vue}',
     '!source/**/_tmp/*' // exclude temporary files
   ],{ dot: true }),
+
   theme: {
-    extend: {},
+
+    extend: {
+
+      fontFamily: {
+
+        'theme-barlow': ['Barlow', ...defaults.fontFamily.sans],
+
+      },
+
+    },
+
   },
+
   plugins: [],
 };
